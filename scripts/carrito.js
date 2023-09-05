@@ -1,11 +1,9 @@
 let seccionCarrito = document.getElementById("seccionCarrito");
 
-    // Recorre todas las claves del localStorage
     for (let i = 0; i < localStorage.length; i++) {
         let claveProducto = localStorage.key(i);
         let productoGuardado = JSON.parse(localStorage.getItem(claveProducto));
 
-        // Crea una tarjeta para cada producto guardado en el carrito
         let tarjetaCarrito = document.createElement("div");
         tarjetaCarrito.innerHTML = `
             <img src="../img/eq.jpg" class="imagen">
@@ -23,3 +21,18 @@ let seccionCarrito = document.getElementById("seccionCarrito");
 
         seccionCarrito.append(tarjetaCarrito);
     }
+
+    let limpiarCarrito = document.getElementById("limpiarCarrito");
+    limpiarCarrito.addEventListener("click", () => {
+        localStorage.clear();
+        location.reload();
+    });
+
+    if(seccionCarrito.innerHTML == ""){
+        let mensajeCarrito = document.createElement("div");
+        // mensajeCarrito.innerHTML = `
+        //     <h2 id="mensajeCarrito">El carrito está vacio.</h2>
+        // `;
+        // seccionCarrito.append(mensajeCarrito);
+        console.log("Carrito vacio");
+    };
