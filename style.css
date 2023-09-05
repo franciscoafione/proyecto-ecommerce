@@ -38,19 +38,7 @@ h1{
     justify-content: center;
 }
 
-#seccionProductos {
-    padding-top: 5%;
-    padding-left: 5%;
-    padding-bottom: 4%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 3%;
-
-    font-size: 1em;
-}
-
-#seccionCarrito{
+.seccionProductos {
     padding-top: 5%;
     padding-left: 5%;
     padding-bottom: 4%;
@@ -96,4 +84,17 @@ button{
 
     font-weight: bold;
     font-size: large;
+}
+
+
+/* ********* Carrito */
+
+#mensajeCarrito{
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.containerVaciarCarrito{
+    padding-top: 4em;
+    padding-left: 7em;
 }
