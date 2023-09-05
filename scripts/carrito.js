@@ -14,13 +14,29 @@ let seccionCarrito = document.getElementById("seccionCarrito");
                 </div>
 
                 <div>
-                    <button id="boton-${productoGuardado.id}">Quitar del carrito</button>
+                    <button id="botonRemueve-${productoGuardado.id}">Quitar del carrito</button>
                 </div>
             </div>
         `;
 
         seccionCarrito.append(tarjetaCarrito);
+        
+        let botonRemueve = document.getElementById(`botonRemueve-${productoGuardado.id}`);
+
+        botonRemueve.addEventListener("click", ()=>{
+            let productoId = botonRemueve.id.split("-")[1];
+            localStorage.removeItem(productoId);
+            location.reload();
+        });
+
+        // let botonRemueve = document.getElementById("botonRemueve-${productoGuardado.id}");
+        // botonRemueve.addEventListener("click", () =>{
+        //     localStorage.removeItem(localStorage.key(i));
+        //     location.reload();
+        // });
+
     }
+
 
     let limpiarCarrito = document.getElementById("limpiarCarrito");
     limpiarCarrito.addEventListener("click", () => {
@@ -28,11 +44,11 @@ let seccionCarrito = document.getElementById("seccionCarrito");
         location.reload();
     });
 
-    if(seccionCarrito.innerHTML == ""){
-        let mensajeCarrito = document.createElement("div");
-        // mensajeCarrito.innerHTML = `
-        //     <h2 id="mensajeCarrito">El carrito está vacio.</h2>
-        // `;
-        // seccionCarrito.append(mensajeCarrito);
-        console.log("Carrito vacio");
-    };
+    // if(seccionCarrito.innerHTML == ""){
+    //     let mensajeCarrito = document.createElement("div");
+    //     // mensajeCarrito.innerHTML = `
+    //     //     <h2 id="mensajeCarrito">El carrito está vacio.</h2>
+    //     // `;
+    //     // seccionCarrito.append(mensajeCarrito);
+    //     console.log("Carrito vacio");
+    // };
