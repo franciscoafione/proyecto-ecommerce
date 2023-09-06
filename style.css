@@ -87,7 +87,7 @@ button{
 }
 
 
-/* ********* Carrito */
+/* ********* Carrito ********* */
 
 #mensajeCarrito{
     font-size: 5em;
@@ -97,4 +97,28 @@ button{
 .containerVaciarCarrito{
     padding-top: 4em;
     padding-left: 7em;
+}
+
+
+/* ******** Registro ******** */
+
+#formularioRegistro{
+    padding-top: 4em;
+    padding-left: 20%;
+    padding-right: 20%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#formularioRegistro div{
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    font-size: larger;
+    font-weight: bold;
+}
+
+input{
+    width: 18em;
 }
