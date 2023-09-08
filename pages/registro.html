@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+
     <title>Registrarse</title>
 </head>
 
@@ -26,15 +27,15 @@
 
     <main>
         <form id="formularioRegistro">
-            <div>
+            <!-- <div>
                 <label for="nombre">Nombre y Apellido:</label>
                 <input type="text" name="nombre" id="nombre">
-            </div>
+            </div> -->
 
-            <div>
+            <!-- <div>
                 <label for="fechaNac">Fecha de nacimiento:</label>
                 <input type="date" name="fechaNac" id="fechaNac">
-            </div>
+            </div> -->
 
             <div>
                 <label for="email">Email:</label>
@@ -42,24 +43,17 @@
             </div>
 
             <div>
-                <label for="usuario">Usuario:</label>
-                <input type="text" name="usuario" id="usuario">
-            </div>
-            <div>
                 <label for="contraseña">Contraseña:</label>
                 <input type="password"  name="contraseña" id="contraseña">
             </div>
+
             <div>
                 <input type="submit" value="registrarme">
             </div>
         </form>
     </main>
-
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js"></script>
-    <script src="../scripts/firebase.js"></script>
-    <script src="../scripts/registro.js"></script>
+    
+    <script type="module" src="../scripts/registro.js"></script>
 </body>
 
 </html>
