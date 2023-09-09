@@ -1,7 +1,9 @@
 let formulario = document.getElementById("formulario");
+let logOut = document.getElementById("logOut");
+const usuariosGuardados = localStorage.getItem('usuarios');
 
 function cargarDatosLS() {
-  const usuariosGuardados = localStorage.getItem('usuarios');
+
   if (usuariosGuardados) {
     return JSON.parse(usuariosGuardados);
   } else {
@@ -32,16 +34,31 @@ formulario.addEventListener("submit", (e) => {
   usuarios.push(nuevoUsuario);
   guardarDatosLS(usuarios);
 
+  //Si faltan datos...
+  if(nuevoUsuario.nombre !== null && nuevoUsuario.email !== null && nuevoUsuario.contraseña !== null){
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro exitoso',
+      text: `${nombre}, has sido registrado con éxito.`,
+    });
+  } else {
+    Swal.fire({
+      icon: 'error',
+      title: 'Registro fallido',
+      text: `Falta llenar datos`,
+    });
+  }
 
-
-  Swal.fire({
-    icon: 'success',
-    title: 'Registro exitoso',
-    text: `${nombre}, has sido registrado con éxito.`,
-  });
 
 });
 
+//Oculta el boton de logOut
+if(!usuariosGuardados){
+  logOut.className = "oculto";
+}
 
-
-
+// Funcionalidad Boton logOut
+logOut.addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+});

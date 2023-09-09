@@ -84,6 +84,9 @@ button{
 
     font-weight: bold;
     font-size: large;
+
+    border-radius: 8%;
+    background-color: rgb(107, 213, 255);
 }
 
 
@@ -121,4 +124,20 @@ button{
 
 input{
     width: 18em;
+}
+
+
+/* ******** Carrito ********** */
+
+.oculto{
+    display: none;
+}
+
+#logOutContainer{
+    padding-left: 3em;
+}
+
+#logOut{
+    background-color: rgb(240, 36, 0);
+    color: white;
 }
