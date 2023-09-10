@@ -1,11 +1,11 @@
 [
-    { "id": 1, "nombre": "Smooth Reverb", "precio": 240 },
-    { "id": 2, "nombre": "Grand Reverb", "precio": 300 },
-    { "id": 3, "nombre": "Platinum Reverb", "precio": 90 },
-    { "id": 4, "nombre": "Delay", "precio": 100 },
-    { "id": 5, "nombre": "Psy-Delay", "precio": 110 },
-    { "id": 6, "nombre": "Chorus", "precio": 120 },
-    { "id": 7, "nombre": "Comp", "precio": 200 },
-    { "id": 8, "nombre": "Booster", "precio": 200 },
-    { "id": 9, "nombre": "EQ", "precio": 90 }
+    { "id": 1, "nombre": "Smooth Reverb", "precio": 240, "imagen": "./img/pedal0.png"},
+    { "id": 2, "nombre": "Grand Reverb", "precio": 300, "imagen": "./img/pedal1.png"},
+    { "id": 3, "nombre": "Platinum Reverb", "precio": 90, "imagen": "./img/pedal2.png"},
+    { "id": 4, "nombre": "Delay", "precio": 100, "imagen": "./img/pedal3.png"},
+    { "id": 5, "nombre": "Psy-Delay", "precio": 110, "imagen": "./img/pedal4.png"},
+    { "id": 6, "nombre": "Chorus", "precio": 120, "imagen": "./img/pedal5.png"},
+    { "id": 7, "nombre": "Comp", "precio": 200, "imagen": "./img/pedal6.png"},
+    { "id": 8, "nombre": "Booster", "precio": 200, "imagen": "./img/pedal7.png"},
+    { "id": 9, "nombre": "EQ", "precio": 90, "imagen": "./img/pedal8.png"}
 ]

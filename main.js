@@ -7,14 +7,33 @@ let listaHeader = document.getElementById("listaHeader");
 // Boton logOut:
 let cierroSesion = document.createElement("li");
 cierroSesion.innerHTML = `
-<a href="">Cerrar sesion</a>
+  <a href="#">Cerrar sesión</a>
 `;
 listaHeader.append(cierroSesion);
 
-cierroSesion.addEventListener("click", () =>{
-    localStorage.clear();
-    location.reload();
+cierroSesion.addEventListener("click", () => {
+  Swal.fire({
+    title: '¿Está seguro?',
+    text: '¿Seguro que desea cerrar sesión?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, cerrar sesión'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        '¡Perfecto!',
+        'Ha cerrado sesión con éxito.',
+        'success'
+      );
+
+      localStorage.clear();
+      location.reload();
+    }
+  });
 });
+
 
 if (localStorage.length === 0){ 
     tituloRegistro.innerHTML = `Registrarse`;
@@ -27,11 +46,12 @@ const pedirProductos = async () => {
     const Response = await fetch("./data.json");
     const data = await Response.json();
 
+    //Muestro las tarjetas:
     data.forEach(i => {
         let div = document.createElement("div");
         div.className = "productos";
         div.innerHTML = `
-                <img src="./img/eq.jpg" class="imagen">
+                <img src="${i.imagen}" class="imagen">
                 <div class="textoTarjeta">
                     <div>
                         <h2> ${i.nombre}</h2>
@@ -48,6 +68,7 @@ const pedirProductos = async () => {
 
         let boton = document.getElementById(`boton-${i.id}`);
 
+        //Agrego al carrito:
         boton.addEventListener("click", () => {
             if (arregloUsuarios !== null && arregloUsuarios !== undefined) {
                 console.log(i.nombre);

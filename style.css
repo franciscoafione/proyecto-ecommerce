@@ -10,19 +10,19 @@ header{
 
     color: black;
     background-color: beige;
-    
+    justify-content: space-between;
+     
 }
 
 header ul{
+    list-style: none;
     display: flex;
     flex-direction: row;
-    padding-left: 70%;
-
-    font-size: 2rem;
-    
 }
+
 header ul li{
-    padding-right: 3em;
+    margin-right: 1em;
+    font-weight:600;
     
 }
 
@@ -31,51 +31,10 @@ h1{
 }
 
 #portada{
-    width: 100%;
     background-color: black;
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-
-.seccionProductos {
-    padding-top: 5%;
-    padding-left: 5%;
-    padding-bottom: 4%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 3%;
-
-    font-size: 1em;
-}
-
-.productos{
-    width: 18em;
-    height: 18em;
-    margin: 10px;
-    padding: 10px;
-    border: 3px solid rgba(0, 0, 0, 0.521);
-    border-radius: 2%;
-    font-size: 20px;
-}
-
-.imagen{
-    width: 94%;
-    height: auto;
-}
-
-.textoTarjeta{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 4%;
-    padding-right: 4%;
-}
-
-.textoTarjeta h2{
-    font-size: 28px;
 }
 
 button{
@@ -89,12 +48,40 @@ button{
     background-color: rgb(107, 213, 255);
 }
 
+/* Tarjetas */
+.seccionProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+
+.productos {
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 1%;
+  }
+  
+
+  .productos .imagen {
+    max-width: 100%;
+  }
+
+  .productos .textoTarjeta {
+    margin-top: 10px;
+  }
+ 
 
 /* ********* Carrito ********* */
 
 #mensajeCarrito{
     font-size: 5em;
     font-weight: bold;
+    padding-left: 2em;
 }
 
 .containerVaciarCarrito{
@@ -102,6 +89,21 @@ button{
     padding-left: 7em;
 }
 
+#vaciarCarrito{
+    background-color: rgb(240, 36, 0);
+    color: white;
+}
+
+#tituloCarrito{
+    padding-left: 4em;
+    font-size: large;
+    
+}
+
+#mensajeCarritoSinUsuario{
+    font-size: 3em;
+    padding-left: 2em;
+}
 
 /* ******** Registro ******** */
 
@@ -126,9 +128,6 @@ input{
     width: 18em;
 }
 
-
-/* ******** Carrito ********** */
-
 .oculto{
     display: none;
 }
@@ -141,3 +140,4 @@ input{
     background-color: rgb(240, 36, 0);
     color: white;
 }
+

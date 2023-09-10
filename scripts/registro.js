@@ -59,6 +59,24 @@ if(!usuariosGuardados){
 
 // Funcionalidad Boton logOut
 logOut.addEventListener("click", () => {
-  localStorage.clear();
-  location.reload();
+  Swal.fire({
+    title: '¿Está seguro?',
+    text: '¿Seguro que desea cerrar sesión?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, cerrar sesión'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        '¡Perfecto!',
+        'Ha cerrado sesión con éxito.',
+        'success'
+      );
+
+      localStorage.clear();
+      location.reload();
+    }
+  });
 });
